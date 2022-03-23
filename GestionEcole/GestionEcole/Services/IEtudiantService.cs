@@ -9,6 +9,9 @@ namespace GestionEcole.Services
    public interface IEtudiantService
     {
         IEnumerable<Etudiant> GetEtudiants();
-
+        Etudiant GetEtudiant(int id);
+        void AddEtudiant(Etudiant etudiant);
+        Etudiant DeleteEtudaint(int id);
+        void UpdateEtudiant(Etudiant etudiant);
     }
 }

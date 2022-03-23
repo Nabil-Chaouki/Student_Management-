@@ -26,27 +26,31 @@ namespace GestionEcole.Controllers
 
         // GET api/<EtudiantController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Etudiant Get(int id)
         {
-            return "value";
+            return _etudiantService.GetEtudiant(id);
         }
 
         // POST api/<EtudiantController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Etudiant etudiant)
         {
+            _etudiantService.AddEtudiant(etudiant);
+
         }
 
         // PUT api/<EtudiantController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] Etudiant etudiant)
         {
+            _etudiantService.UpdateEtudiant(etudiant);
         }
 
         // DELETE api/<EtudiantController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Etudiant Delete(int id)
         {
+            return _etudiantService.DeleteEtudaint(id);
         }
     }
 }
